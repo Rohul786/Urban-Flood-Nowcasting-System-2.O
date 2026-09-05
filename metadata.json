@@ -1,0 +1,6 @@
+{
+  "name": "FloodGuard AI",
+  "description": "Urban Flood Nowcasting System (Drainage and Rainfall Coupling) - Smart India Hackathon 2026 prototype for MoES NCMRWF.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

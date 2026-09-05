@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #0A0E14;
+    color: #E2E8F0;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+/* Technical Dashboard Dot-Grid Background */
+.bg-tech-grid {
+  background-color: #0A0E14;
+  background-image: radial-gradient(#1E293B 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-tech-subsurface {
+  background-color: #0D1219;
+}
+
+.border-tech-grid {
+  border-color: #1E293B;
+}
+
+/* Custom dark tile filter for OpenStreetMap to fit Technical Command Center aesthetic */
+.osm-dark-tiles {
+  filter: brightness(0.65) invert(1) contrast(3) hue-rotate(200deg) saturate(0.25) brightness(0.7);
+}
+
+/* True-color Satellite imagery styling */
+.satellite-tiles {
+  filter: contrast(1.08) brightness(1.02) !important;
+}
+
+.leaflet-control-attribution {
+  background-color: rgba(10, 14, 20, 0.85) !important;
+  color: #94a3b8 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 10px !important;
+  padding: 2px 8px !important;
+  border-top-left-radius: 4px;
+}
+
+.leaflet-control-attribution a {
+  color: #00d1ff !important;
+  text-decoration: none !important;
+}
+
+.leaflet-control-attribution a:hover {
+  text-decoration: underline !important;
+}
+
+.leaflet-container {
+  background-color: #0A0E14 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/* Custom map pulse animations */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.animate-radar-pulse {
+  animation: radar-pulse 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+/* Radar sweep rotation */
+@keyframes radar-sweep-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radar-sweep-rotate 5s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes convective-glow {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-convective-glow {
+  animation: convective-glow 2.5s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0E14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00D1FF;
+}
